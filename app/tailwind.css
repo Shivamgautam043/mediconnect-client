@@ -1,12 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "@mantine/core/styles.css";
+@import "@mantine/notifications/styles.css"; */
 
+/* Define base styles */
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+    @apply bg-defaultbgwhite text-black;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* Theme color variables */
+@theme {
+    --color-neutral-white: #fffbfa;
+    --color-neutral-black: #0f0e0e;
+    --color-light-green: #255001;
+    --color-neutral-foreground: #62656a;
+    --color-primary-red: #ff1801;
+    --color-sec-orange: #ff9000;
+    --color-heading-black: #3c3c43;
+    --color-yellow-original: #ffd605;
+    --color-cta-red: #ff6760;
+}
+
+@layer components {
+    :root {
+        /* Balanced clamp — starts from 1.5rem, grows to 6rem max */
+        --px-screen-edge: clamp(1rem, 4vw, 5rem);
+    }
+
+    .px-screen-edge {
+        padding-left: var(--px-screen-edge);
+        padding-right: var(--px-screen-edge);
+    }
+
+    @media (min-width: 1472px) {
+        :root {
+            /* Locks padding on very wide screens to center a 1280px container */
+            --px-screen-edge: calc((100vw - 1280px) / 4);
+        }
+    }
 }
