@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useEffect, useState } from "react";
+import { SystemInfo } from "~/utilities/types";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,42 +9,6 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-
-interface BatteryInfo {
-  state?: string;
-  percentage?: string;
-  time_to_empty?: string;
-  energy?: string;
-  energy_full?: string;
-  energy_rate?: string;
-  on_battery?: boolean;
-  error?: string;
-}
-
-interface ProcessInfo {
-  pid: number;
-  name: string;
-  cpu_percent: number;
-  memory_percent: number;
-}
-
-interface SystemInfo {
-  cpu_usage: string | null;
-  cpu_temperature: string | null;
-  memory_usage: string | null;
-  available_memory: string | null;
-  total_memory: string | null;
-  disk_total: string | null;
-  disk_used: string | null;
-  disk_free: string | null;
-  system_uptime: string | null;
-  platform: string | null;
-  current_time: string | null;
-  battery_info: BatteryInfo | null;
-  top_processes: ProcessInfo[] | null;
-}
-
-// 2. Component
 export default function Index() {
   const [systemInfo, setSystemInfo] = useState<SystemInfo>({
     cpu_usage: null,
