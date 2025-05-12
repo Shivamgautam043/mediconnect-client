@@ -30,14 +30,14 @@ export function HeaderServerMonitor() {
             );
             if (response.ok) {
                 const data = await response.json();
-                console.log("Fetched data:", data);
+                // console.log("Fetched data:", data);
                 setSystemInfo(data);
                 setStatus("");
             } else {
                 setStatus("Failed to fetch data.");
             }
         } catch (err) {
-            console.error("Error:", err);
+            // console.error("Error:", err);
             setStatus("Error fetching data.");
         }
     };
