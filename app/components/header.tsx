@@ -1,10 +1,9 @@
 import { Link } from "@remix-run/react";
-import { SystemMonitorIcon } from "~/utilities/svgs";
 import { HeaderServerMonitor } from "./serverMonitor";
 
 export function DefaultHeader() {
     return (
-        <div className="h-16 md:h-[72px] bg-naturalwhite px-screen-edge grid grid-cols-1 w-full place-content-center place-items-center">
+        <div className="fixed top-0 h-16 md:h-[72px] bg-naturalwhite px-screen-edge grid grid-cols-1 w-full place-content-center place-items-center">
             <div className="w-full grid grid-flow-col place-content-between place-items-center ">
                 <Link to={"/"}>
                     <img
