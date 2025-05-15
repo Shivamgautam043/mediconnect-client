@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { isDOMComponent } from "react-dom/test-utils";
 import { SystemMonitorIcon } from "~/utilities/svgs";
 import { SystemInfo } from "~/utilities/types";
 
@@ -26,7 +25,7 @@ export function HeaderServerMonitor() {
     const fetchSystemData = async () => {
         try {
             const response = await fetch(
-                "http://system-info.devshivam.in/system-info"
+                "https://system-info.devshivam.in/system-info"
             );
             if (response.ok) {
                 const data = await response.json();
