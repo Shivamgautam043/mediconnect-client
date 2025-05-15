@@ -1,13 +1,18 @@
+@import "@mantine/core/styles.css";
+@import "@mantine/notifications/styles.css";
+@import "@mantine/charts/styles.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import "@mantine/core/styles.css";
-@import "@mantine/notifications/styles.css"; */
+
+/* Your custom CSS below if any */
 
 /* Define base styles */
 html,
 body {
     @apply bg-defaultbgwhite text-black;
+    font-family: "Roboto", sans-serif;
 }
 
 /* Theme color variables */

@@ -7,6 +7,9 @@ module.exports = {
                 defaultbgwhite: "#f5f5f7",
                 naturalwhite: "#ffffff",
             },
+            fontFamily: {
+                sans: ["Roboto", "sans-serif"],
+            },
         },
     },
     plugins: [],
