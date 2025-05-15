@@ -26,7 +26,7 @@ export function HeaderServerMonitor() {
     const fetchSystemData = async () => {
         try {
             const response = await fetch(
-                "http://192.168.1.15:8000/system-info"
+                "http://system-info.devshivam.in/system-info"
             );
             if (response.ok) {
                 const data = await response.json();

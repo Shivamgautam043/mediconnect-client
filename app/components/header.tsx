@@ -9,7 +9,7 @@ export function DefaultHeader() {
                 <Link to={"/"}>
                     <img
                         className="h-10  md:h-[60px]"
-                        src="/public/medi-logo-1.webp"
+                        src="https://res.cloudinary.com/duwfzddrs/image/upload/v1747296748/medi-logo-1_ji1fh0.webp"
                         alt="Logo"
                         // style={{ height: 60 }}
                     />
