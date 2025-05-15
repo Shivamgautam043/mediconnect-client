@@ -3,8 +3,8 @@ import { DefaultHeader } from "~/components/header";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "New Remix" },
-        { name: "description", content: "Welcome to Remix!" },
+        { title: "MediConnect" },
+        { name: "description", content: "Simply connect. Seamlessly care." },
     ];
 };
 
