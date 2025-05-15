@@ -118,9 +118,12 @@ export function HeaderServerMonitor() {
                     <div>Disk Free: {systemInfo.disk_free}</div>
                     <div>Uptime: {systemInfo.system_uptime}</div>
                     <div>Platform: {systemInfo.platform}</div>
-                    <div>
-                        Time: {convertUTCToIST(systemInfo.current_time ?? "")}
-                    </div>
+                    {systemInfo.current_time !== null && (
+                        <div>
+                            Time:{" "}
+                            {convertUTCToIST(systemInfo.current_time ?? "")}
+                        </div>
+                    )}
                     <div className="grid grid-cols-1 w-full place-content-end place-items-end">
                         <button
                             className="hover:scale-105"
@@ -208,7 +211,11 @@ function EnlargeSystemView({
             <div>Disk Free: {systemInfo.disk_free}</div>
             <div>Uptime: {systemInfo.system_uptime}</div>
             <div>Platform: {systemInfo.platform}</div>
-            <div>Time: {convertUTCToIST(systemInfo.current_time ?? "")}</div>
+            {systemInfo.current_time !== null && (
+                <div>
+                    Time: {convertUTCToIST(systemInfo.current_time ?? "")}
+                </div>
+            )}
         </Modal>
     );
 }
