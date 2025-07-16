@@ -1,0 +1,3 @@
+[submodule "app/submodule-database-manager"]
+	path = app/submodule-database-manager
+	url = https://github.com/Shivamgautam043/submodule-database-manager-postgres
