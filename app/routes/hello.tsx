@@ -13,11 +13,11 @@ export const loader: LoaderFunction = async () => {
     const result = await postgresManager.data.execute(query);
 
     console.log(result.success);
-    if(result.success===false){
+    if (result.success === false) {
         console.log(result.err);
         console.log(result.err.message);
         return result.err;
-    }else{
+    } else {
         console.log(result.data);
     }
     return result.data;
