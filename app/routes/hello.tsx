@@ -15,6 +15,7 @@ export const loader: LoaderFunction = async () => {
     console.log(result.success);
     if(result.success===false){
         console.log(result.err);
+        console.log(result.err.message);
         return result.err;
     }else{
         console.log(result.data);
