@@ -19,6 +19,7 @@ export const loader: LoaderFunction = async () => {
         return result.err;
     } else {
         console.log(result.data);
+        console.log("sss"+result.data.rowCount);
     }
     return result.data;
 }

@@ -4,3 +4,6 @@
 [submodule "app/bifrost"]
 	path = app/bifrost
 	url = https://github.com/Shivamgautam043/bifrost.git
+[submodule "app/submodule-common-type-definitons"]
+	path = app/submodule-common-type-definitons
+	url = https://github.com/Shivamgautam043/submodule-common-type-definitons.git
