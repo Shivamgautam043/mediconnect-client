@@ -37,15 +37,23 @@ export default function AuthPage() {
     formData.append("loginType", loginType); // "doctor", "patient", etc.
 
     try {
+      console.log("hello");
+
       const res = await fetch(endpoint, {
         method: "POST",
         body: formData,
       });
+      console.log("namaste");
+
+      console.log(res);
 
       const data = await res.json();
+      console.log("shkfhs");
+      console.log(data);
 
       if (res.ok && data.success) {
-        navigate("/dashboard");
+        console.log("succes login ->");
+        navigate("/");
       } else {
         setError(data.error || "Something went wrong");
       }
