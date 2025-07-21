@@ -73,8 +73,12 @@ export const action: ActionFunction = async ({ request }) => {
 
     console.log(`✅ Login successful for ${email} (${loginType})`);
 
-    return ({
-        success: true,
-        sessionCookie: await commitSession(session),
-    });
+    return Response.json(
+        { success: true },
+        {
+            headers: {
+                "Set-Cookie": await commitSession(session),
+            },
+        }
+    );
 };
