@@ -1,4 +1,4 @@
-import { ActionFunction } from "@remix-run/node";
+import { ActionFunction, json, redirect } from "@remix-run/node";
 import bcrypt from "bcryptjs";
 import { commitSession, getSession } from "~/backend/session.server";
 import { getPostgresDatabaseManager } from "~/submodule-database-manager/postgresDatabaseManager.server";
@@ -74,7 +74,7 @@ export const action: ActionFunction = async ({ request }) => {
     console.log(`✅ Login successful for ${email} (${loginType})`);
 
     return Response.json(
-        { success: true },
+        { success: true, redirectTo: "/" },
         {
             headers: {
                 "Set-Cookie": await commitSession(session),

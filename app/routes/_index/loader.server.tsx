@@ -1,5 +1,6 @@
 // app/routes/_index.tsx
 import type { LoaderFunctionArgs } from "@remix-run/node";
+import { redirect } from "react-router";
 import { getSession } from "~/backend/session.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -7,8 +8,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
     const userId = session.get("userId");
     const userType = session.get("userType");
     const email = session.get("email");
+    const isLoggedIn = !!userId;
 
-    console.log({ isLoggedIn: !!userId, userId, userType, email })
+    console.log(isLoggedIn, "islogedin");
+    if (isLoggedIn === false) {
+        return redirect('/sign-in');
+    }
 
-    return ({ isLoggedIn: !!userId, userId, userType, email });
+    console.log({ isLoggedIn, userId, userType, email })
+
+    return ({ isLoggedIn, userId, userType, email });
 }

@@ -37,7 +37,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Links />
             </head>
             <body>
-                {/* ⬇️ Wrap with MantineProvider */}
                 <MantineProvider>
                     <Notifications />
                     {children}

@@ -14,9 +14,7 @@ export default function Index() {
     return (
         <div>
             <DefaultHeader />
-
             <VerticalSpacer className="h-16 md:h-[72px]" />
-
             <img
                 src="https://res.cloudinary.com/duwfzddrs/image/upload/v1747324599/desktop-banner-1_dibxkn.webp"
                 alt=""
