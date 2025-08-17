@@ -1,9 +1,10 @@
 // app/routes/_index.tsx
-import type { LoaderFunctionArgs } from "@remix-run/node";
-import { redirect } from "react-router";
+import { LoaderFunctionArgs, redirect } from "react-router";
 import { getSession } from "~/backend/session.server";
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request, context }: LoaderFunctionArgs) {
+
+
     const session = await getSession(request.headers.get("Cookie"));
     const userId = session.get("userId");
     const userType = session.get("userType");
@@ -17,5 +18,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
     console.log({ isLoggedIn, userId, userType, email })
 
+     const { user } = context;
+
+    console.log("user from context:", user);
+
+     
+
     return ({ isLoggedIn, userId, userType, email });
+
+   
+
+    // return { user };
 }

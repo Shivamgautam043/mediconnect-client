@@ -1,3 +1,16 @@
+import type { Session } from "@remix-run/node";
+
+export type AppLoadContext = {
+    user: {
+        id: string | null;
+        email: string | null;
+        type: string | null;
+        isLoggedIn: boolean;
+    };
+    session: Session;
+};
+
+
 export type BatteryInfo = {
     state?: string;
     percentage?: string;

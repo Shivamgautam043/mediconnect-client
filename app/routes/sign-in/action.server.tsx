@@ -1,5 +1,5 @@
-import { ActionFunction, data, json, redirect } from "@remix-run/node";
 import bcrypt from "bcryptjs";
+import { ActionFunction } from "react-router";
 import { commitSession, getSession } from "~/backend/session.server";
 import { getPostgresDatabaseManager } from "~/submodule-database-manager/postgresDatabaseManager.server";
 import { getStringFromUnknown } from "~/submodule-database-manager/utilities/typeValidationUtilities";

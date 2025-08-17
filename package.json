@@ -4,11 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@mantine/charts": "^8.0.1",
@@ -16,11 +14,14 @@
     "@mantine/form": "^8.2.4",
     "@mantine/hooks": "^8.0.1",
     "@mantine/notifications": "^8.0.1",
-    "@remix-run/node": "^2.16.6",
-    "@remix-run/react": "^2.16.6",
-    "@remix-run/serve": "^2.16.6",
+    "@react-router/dev": "^7.8.1",
+    "@react-router/express": "^7.8.1",
+    "@react-router/node": "^7.8.1",
+    "@tailwindcss/vite": "^4.1.12",
     "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
     "isbot": "^4.1.0",
+    "morgan": "^1.10.1",
     "pg": "^8.16.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,7 +31,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.16.6",
+    "@types/express": "^5.0.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
@@ -44,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.4",
     "typescript": "^5.1.6",
     "vite": "^6.0.0",
     "vite-tsconfig-paths": "^4.2.1"

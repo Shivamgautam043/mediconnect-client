@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import { MetaFunction } from "react-router";
 import { DefaultHeader } from "~/components/header";
 import { VerticalSpacer } from "~/utilities/components";
 export { loader } from "./loader.server";

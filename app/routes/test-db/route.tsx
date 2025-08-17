@@ -8,7 +8,8 @@ import {
     Loader,
     Code,
 } from "@mantine/core";
-import { useFetcher } from "@remix-run/react";
+import { useFetcher } from "react-router";
+
 
 export { action } from "./action.server";
 

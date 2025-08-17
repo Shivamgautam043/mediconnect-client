@@ -1,4 +1,5 @@
-import { ActionFunction, json } from "@remix-run/node";
+
+import { ActionFunction } from "react-router";
 import { getPostgresDatabaseManager } from "~/submodule-database-manager/postgresDatabaseManager.server";
 
 type ActionData =
@@ -13,22 +14,22 @@ export const action: ActionFunction = async ({ request }) => {
 
   if (!query || typeof query !== "string") {
     console.log("❌ Missing or invalid query");
-    return json({ success: false, error: "Missing or invalid query" } as ActionData);
+    return ({ success: false, error: "Missing or invalid query" } as ActionData);
   }
 
   const dbManager = await getPostgresDatabaseManager(null);
   if (!dbManager.success) {
     console.log("❌ DB connection failed");
-    return json({ success: false, error: dbManager.err.message } as ActionData);
+    return ({ success: false, error: dbManager.err.message } as ActionData);
   }
 
   const result = await dbManager.data.execute(query);
 
   if (!result.success) {
     console.log("❌ Query execution failed");
-    return json({ success: false, error: result.err.message } as ActionData);
+    return ({ success: false, error: result.err.message } as ActionData);
   }
 
   console.log("✅ Query successful");
-  return json({ success: true, data: { result: result.data } } as ActionData);
+  return ({ success: true, data: { result: result.data } } as ActionData);
 };

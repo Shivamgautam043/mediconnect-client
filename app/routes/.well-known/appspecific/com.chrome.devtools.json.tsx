@@ -1,5 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
-
+import { LoaderFunction } from "react-router";
 export const loader: LoaderFunction = () => {
   return new Response("{}", {
     status: 200,

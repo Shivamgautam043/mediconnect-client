@@ -6,11 +6,11 @@ import {
   Text,
   Paper
 } from "@mantine/core";
-import { useFetcher, useNavigate } from "@remix-run/react";
 import { useForm, UseFormReturnType } from "@mantine/form";
 import { LoginActionResponse } from "./action.server";
 import { notifications, showNotification } from "@mantine/notifications";
 import { showErrorToast, showSuccessToast } from "~/utilities/functions";
+import { useFetcher, useNavigate } from "react-router";
 
 export default function AuthPage() {
   const [mode, setMode] = useState<"login" | "signup">("login");
