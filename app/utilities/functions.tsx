@@ -1,3 +1,6 @@
+import { Uuid } from "~/submodule-common-type-definitons/typeDefinitions";
+import { v4 as uuidv4 } from "uuid";
+import { notifications } from "@mantine/notifications";
 export function convertUTCToIST(utcString: string): string {
     const [datePart, timePart] = utcString.split(" ");
     let [year, month, day] = datePart.split("-").map(Number);
@@ -35,4 +38,42 @@ export function convertUTCToIST(utcString: string): string {
     return `${year}-${pad(month)}-${pad(day)} ${pad(hour)}:${pad(minute)}:${pad(
         second
     )}`;
+}
+
+
+export function generateUuid(): Uuid {
+    return uuidv4() as Uuid;
+}
+
+export function showErrorToast(title: string, message: string) {
+    notifications.show({
+        // id: 'hello-there',
+        withCloseButton: true,
+        onClose: () => console.log('unmounted'),
+        onOpen: () => console.log('mounted'),
+        autoClose: 3000,
+        position: 'top-right',
+        loading: false,
+        title: title,
+        message: message,
+        color: "red"
+
+    });
+}
+
+
+export function showSuccessToast(title: string, message: string) {
+    notifications.show({
+        // id: 'hello-there',
+        withCloseButton: true,
+        onClose: () => console.log('unmounted'),
+        onOpen: () => console.log('mounted'),
+        autoClose: 3000,
+        position: 'top-right',
+        loading: false,
+        title: title,
+        message: message,
+        color: "green"
+
+    });
 }

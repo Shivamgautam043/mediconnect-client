@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   TextInput,
   PasswordInput,
@@ -6,14 +6,17 @@ import {
   Text,
   Paper
 } from "@mantine/core";
-import { useNavigate } from "@remix-run/react";
+import { useFetcher, useNavigate } from "@remix-run/react";
 import { useForm, UseFormReturnType } from "@mantine/form";
-
+import { LoginActionResponse } from "./action.server";
+import { notifications, showNotification } from "@mantine/notifications";
+import { showErrorToast, showSuccessToast } from "~/utilities/functions";
 
 export default function AuthPage() {
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [loginType, setLoginType] = useState<"patient" | "doctor" | "physician_assistant" | null>(null);
   const navigate = useNavigate();
+  const fetcher = useFetcher<LoginActionResponse>();
 
   const form = useForm({
     initialValues: {
@@ -32,7 +35,7 @@ export default function AuthPage() {
     }
   });
 
-  async function handleSubmit(values: typeof form.values) {
+  function handleSubmit(values: typeof form.values) {
     const endpoint = mode === "login" ? "/sign-in" : "/api/signup";
 
     const formData = new FormData();
@@ -40,21 +43,21 @@ export default function AuthPage() {
     formData.append("password", values.password);
     formData.append("loginType", loginType ?? "");
 
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        body: formData
-      });
+    fetcher.submit(formData, { method: "post", action: endpoint });
+  }
 
-      if (res.ok) {
+  useEffect(() => {
+    if (fetcher.state === "idle" && fetcher.data) {
+      console.log(fetcher.data);
+      if (fetcher.data.success) {
+        // showSuccessToast("Login Successfull","Redirecting...");
         navigate("/");
       } else {
-        form.setErrors({ email: "Something went wrong" });
+        form.setErrors({ email: fetcher.data.error || "Something went wrong" });
+        showErrorToast("Error", fetcher.data.error);
       }
-    } catch {
-      form.setErrors({ email: "Something went wrong" });
     }
-  }
+  }, [fetcher.state, fetcher.data]);
 
   return (
     <div className="min-h-screen w-full px-screen-edge grid place-content-center place-items-center">
