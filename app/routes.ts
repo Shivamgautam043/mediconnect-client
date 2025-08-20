@@ -4,6 +4,7 @@ import { index, prefix, route } from "@react-router/dev/routes";
 export default [
   index("routes/_index/route.tsx"),
   route("about-us", "routes/about-us/route.tsx"),
+  route("test-db", "routes/test-db/route.tsx"),
 
   // route("product-detail", "routes/product-detail/route.tsx"),
   route("product-detail/:id", "routes/product-detail/$id/route.tsx"),

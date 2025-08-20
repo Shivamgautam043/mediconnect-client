@@ -9,7 +9,7 @@ import {
     Code,
 } from "@mantine/core";
 import { useFetcher } from "react-router";
-
+export { action } from "./action.server";
 
 type ResponseData =
     | { success: true; data: any }
