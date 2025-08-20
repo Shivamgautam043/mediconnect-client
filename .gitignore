@@ -1,0 +1,36 @@
+node_modules
+# /gjIdentifier
+# 4cc38a5c-5525-4e65-b541-a4fd626dc233
+# v0.0.2
+# Includes:
+#     - env
+#     - healthCheck
+# /gjIdentifier
+
+# NodeJS files
+/node_modules
+/.cache
+
+# Vite temporary files
+vite.config.ts.*
+
+# Build files
+/public/build
+/build
+/.react-router/
+
+# env files
+/.env
+/.env.*
+
+# Project specific files
+/app/healthCheck.json
+/logs
+/local
+
+# OS specific files
+**/.DS_Store
+
+ids.yaml
+
+/app/script.js

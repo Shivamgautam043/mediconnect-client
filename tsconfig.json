@@ -1,0 +1,18 @@
+{
+    // TODO: Figure out why this is not working
+    "include": ["env.d.ts"],
+    // /TODO
+    "files": [],
+    "references": [
+        {"path": "./tsconfig.node.json"},
+        {"path": "./tsconfig.vite.json"}
+    ],
+    "compilerOptions": {
+        "checkJs": true,
+        // TODO: Temporarily removing to prevent errors
+        // "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true
+    }
+}
