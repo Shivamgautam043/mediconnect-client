@@ -1,15 +1,10 @@
 import { LoaderFunction } from "react-router";
-import { defaultAccessToken } from "~/utilities/fields/fields";
-import { getRequiredEnvironmentVariable } from "~/utilities/utilities";
 
 export type LoaderData = {
   canonicalUrl: string;
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const projectId = getRequiredEnvironmentVariable("OTTOPILOT_PROJECT_ID");
-  const ottopilotBaseUrl = getRequiredEnvironmentVariable("OTTOPILOT_BASE_URL");
-  const accessToken = defaultAccessToken;
   const url = new URL(request.url);
   const cleanUrl = "https://" + url.pathname;
 

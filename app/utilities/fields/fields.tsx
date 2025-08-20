@@ -119,8 +119,6 @@ export const resourceTypeMetadata:EnumDictionary<ResourcesType, {
 
 export const TaxRates = [0, 3, 5, 12, 18, 28];
 
-export const defaultAccessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhY2NlMjQ3Zi01ZmNkLTRkMTYtYTMxMC03ZmYwZTllMjc4NWEifQ.UnUDvtLuXcA3oJd2_Y8FhGNeKrWlBs1eXA_SmiIZuAk";
-
 export type Address = {
     id: Uuid;
     name: string;
