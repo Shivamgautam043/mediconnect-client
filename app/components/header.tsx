@@ -1,5 +1,7 @@
 import { Link } from "@remix-run/react";
 import { HeaderServerMonitor } from "./serverMonitor";
+import { VerticalSpacer } from "~/utilities/components";
+import { Camera, LogOut } from "lucide-react";
 
 export function DefaultHeader() {
     const handleSignout = async () => {
@@ -9,7 +11,8 @@ export function DefaultHeader() {
         window.location.href = window.location.href;
     }
     return (
-        <div className="fixed top-0 h-16 md:h-[72px] bg-naturalwhite px-screen-edge grid grid-cols-1 w-full place-content-center place-items-center">
+    <>
+        <div className="fixed top-0 h-16 md:h-[72px] bg-naturalwhite px-screen-edge grid grid-cols-1 w-full place-content-center place-items-center shadow">
             <div className="w-full grid grid-flow-col place-content-between place-items-center ">
                 <Link to={"/"}>
                     <img
@@ -25,14 +28,15 @@ export function DefaultHeader() {
                     <div></div>
                     <div></div>
                     <div>
-                        <HeaderServerMonitor />
+                        {/* <HeaderServerMonitor /> */}
                     </div>
                 </div>
                 <button onClick={() => handleSignout()}>
-                    X
-
+                <LogOut size={24}/>
                 </button>
             </div>
         </div>
+        <VerticalSpacer className="h-16 md:h-[72px]" />
+    </>
     );
 }

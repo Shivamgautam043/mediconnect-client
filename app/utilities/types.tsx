@@ -31,3 +31,24 @@ export type SystemInfo = {
     battery_info: BatteryInfo | null;
     top_processes: ProcessInfo[] | null;
 }
+
+export type Doctor = {
+  id: string;
+  created_at: Date;   
+  updated_at: Date;   
+  full_name: string;
+  phone: string;
+  email: string;
+  dob: Date;          
+  gender: "male" | "female" | "other";
+  specialization: string;
+  qualification: string;
+  experience_years: number;
+  license_number: string;
+  clinic_name: string;
+  address: string;
+  availability: string;
+  bio: string;
+  photo_url: string;
+  password: string;
+};

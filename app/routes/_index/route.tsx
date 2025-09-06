@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
-import { DefaultHeader } from "~/components/header";
-import { VerticalSpacer } from "~/utilities/components";
+import { HomeSection1 } from "./routeComponent";
 export { loader } from "./loader.server";
+
 
 export const meta: MetaFunction = () => {
     return [
@@ -12,14 +12,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <div>
-            <DefaultHeader />
-            <VerticalSpacer className="h-16 md:h-[72px]" />
-            <img
-                src="https://res.cloudinary.com/duwfzddrs/image/upload/v1747324599/desktop-banner-1_dibxkn.webp"
-                alt=""
-                className="w-full"
-            />
-        </div>
-    );
+        <>
+            <HomeSection1 />
+        </>
+    )
 }
