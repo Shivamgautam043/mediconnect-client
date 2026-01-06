@@ -1,40 +1,44 @@
-# Welcome to Remix!
+# MediConnect
 
-- 📖 [Remix docs](https://remix.run/docs)
+**MediConnect — Smart clinic & appointment management system**
 
-## Development
+MediConnect is a web-based medical appointment booking and clinic management platform designed to help doctors and clinic staff efficiently manage patients, appointments, and consultations.
 
-Run the dev server:
+This application focuses on simplifying day-to-day clinic operations while providing a smooth experience for both healthcare providers and patients.
 
-```shellscript
-npm run dev
-```
+---
 
-## Deployment
+## 🚀 Tech Stack
 
-First, build your app for production:
+- Remix (Full-stack framework)
+- React
+- TypeScript
+- PostgreSQL
+- Tailwind CSS
+- Node.js
 
-```sh
-npm run build
-```
+---
 
-Then run the app in production mode:
+## ✨ Key Features
 
-```sh
-npm start
-```
+- 🔐 Secure authentication for doctors and clinic staff
+- 📅 Appointment booking & management
+- 🏥 Clinic-based workflow (doctors, nurses, helpers)
+- 👤 Patient records management
+- 🩺 Teleconsultation-ready architecture
+- 📊 Scalable backend with PostgreSQL
 
-Now you'll need to pick a host to deploy it to.
+---
 
-### DIY
+## 🛠️ Development Setup
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm / pnpm
+- PostgreSQL running locally or remotely
 
-Make sure to deploy the output of `npm run build`
+---
 
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+### Install dependencies
+```bash
+npm install
